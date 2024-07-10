@@ -39,7 +39,7 @@ Leave gorilla tag and the replit page up and you will be lucky enough to track s
 
 	- Im not responsible for bans.
 	
- 	- Educational purposes **only**
+ 	- Educational purposes only (frfr)
 	
 	 - Dont join code 1 just dont do it
 
