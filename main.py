@@ -1,4 +1,5 @@
-mport requests
+#Credit to LARSON and ARK'S EMPIRE
+import requests
 import time
 from datetime import datetime
 #Discord webhooks
@@ -6,7 +7,7 @@ Snippet_Main = "PUT_YOUR_WEBHOOK_HERE"
 Snippet_Logs = "PUT_YOUR_WEBHOOK_HERE"
 Session_Ticket = "PUT_YOUR_WEBHOOK_HERE"
 #Variables
-regions = ["US", "USW",]
+regions = ["US", "USW"]
 title = "63FDD"
 FingerPainter = "LBADE."
 Stick = "LBAAK."
