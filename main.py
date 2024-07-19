@@ -1,4 +1,3 @@
-#Credit to LARSON and ARK'S EMPIRE
 import requests
 import time
 from datetime import datetime
@@ -7,7 +6,7 @@ Snippet_Main = "PUT_YOUR_WEBHOOK_HERE"
 Snippet_Logs = "PUT_YOUR_WEBHOOK_HERE"
 Session_Ticket = "PUT_YOUR_WEBHOOK_HERE"
 #Variables
-regions = ["US", "USW"]
+regions = ["US", "USW", "EU"]
 title = "63FDD"
 FingerPainter = "LBADE."
 Stick = "LBAAK."
@@ -251,7 +250,7 @@ def Tracker_Started(user):
             "title": f"Player Tracker Started",
             "description":
             f"**{user}** is so sigma that they started the tracker",
-            "color": 0x00FF0000,
+            "color": 0x00FFFFFF,
             "footer": {
                 "text": "Log generated at"
             },
@@ -309,6 +308,8 @@ def successful_log(login_response):
 def error_log(login_response):
     current_time = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
     payload = {
+        "content":
+        "@everyone",
         "embeds": [{
             "title": "Session Ticket Status",
             "description":
@@ -338,17 +339,14 @@ def error_log(login_response):
 
 
 def Player_Found(item, room, count):
-    print(
-        f"FOUND A {item} IN ROOM {room} WITH ARK'S TEMPLATE, AT {current_time}"
-    )
     current_time = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
     payload = {
         "content":
         "<@&BUYER_ROLE_ID>",
         "embeds": [{
             "title": "",
-            "description":F
-            f"OUND A **{item}** IN ROOM **{room}** WITH **{count} PLAYERS**",
+            "description":
+            f"FOUND A **{item}** IN ROOM **{room}** WITH **{count} PLAYERS**",
             "color": 0x00FF00,
             "footer": {
                 "text": "Log generated at"
@@ -374,13 +372,6 @@ def Player_Found(item, room, count):
 
 
 def Player_Missed(code, data):
-   print (
-    f"Nobody in '{code}' had special cosmetics
-    
-    ~~~~~ITEMS FOUND~~~~~
-    {data}
-    "
-   ) 
     current_time = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
     payload = {
         "embeds": [{
@@ -473,7 +464,7 @@ def check_data(session_ticket):
     ClientHeaders = {"X-Authorization": session_ticket}
     for word in Codes:
         for region in regions:
-            combined_code = "CODE: " + word + " REGION: "region
+            combined_code = word + region
             Keys = ""
             request = {
                 "SharedGroupId": combined_code,
@@ -580,3 +571,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
