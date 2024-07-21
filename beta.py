@@ -14,7 +14,7 @@ Admin = "LBAAD."
 HighTech = "LMAAV."
 UnreleasedSweater = "LBACP."
 IllustratorBadge = "LBAGS. "
-
+BuyerRoleId = "ID_HERE"
 #Ingame codes
 Codes = [
     "JMAN",
@@ -250,7 +250,7 @@ def Tracker_Started(user):
         "embeds": [{
             "title": f"Player Tracker Started",
             "description":
-            f"**{user}** has started the tracker. Have fun tracking!",
+            f"**{user}** has started the tracker. Have fun tracking! While tracking you may find **Finger painter, Hightech Slingshot, Stick, Admin Badge, Unreleased Sweater** and **Illustrator badge**",
             "color": 0x00FFFFFF,
             "footer": {
                 "text": "Log generated at"
@@ -259,7 +259,7 @@ def Tracker_Started(user):
                 "name":
                 "Player Tracker",
                 "icon_url":
-                "https://media.discordapp.net/attachments/1264063932507885638/1264063952447471626/aa27eef2b9f84e48b30d4e4a2db7ca1c.jpg?ex=669c82cb&is=669b314b&hm=010bad4b6d460661dbcaa14a79a7da748401447e27c55bf5e0f7bf6df9237fc9&=&format=webp&width=898&height=4096",
+                "https://media.discordapp .net/attachments/1264063932507885638/1264063952447471626/aa27eef2b9f84e48b30d4e4a2db7ca1c.jpg?ex=669c82cb&is=669b314b&hm=010bad4b6d460661dbcaa14a79a7da748401447e27c55bf5e0f7bf6df9237fc9&=&format=webp&width=898&height=4096",
             },
             "thumbnail": {
                 "url":
@@ -340,16 +340,45 @@ def error_log(login_response):
         )
 
 
-def Player_Found(item, room, count):
+def Player_Found(item, room, count, region):
     print(f"FOUND A {item} IN ROOM {room}")
     current_time = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
-    payload = {
+  
+if {item} == "FINGER PAINTER":
+    ppayload = {
+        
         "content":
         "<@&BUYER_ROLE_ID>",
         "embeds": [{
-            "title": f"FOUND A: **{item}**",
+            "title": f"FOUND A: **FINGERPAINTER**",
             "description":
-            f"**ITEM: {item}** ROOM: **{room}** TIME: {current_time} ",
+            f"**ITEM: Finger Painter** ROOM: **{room}** TIME: **{current_time}** REGION:  **{region}** -#ⓘ **NOTE** These players can not ban you but they are in contact with **moderators**.",
+            "color": 0x00FF00,
+            
+            "footer": {
+                "text": "Log generated at"
+            },
+            "author": {
+                "name":
+                "Player Traker Log",
+                "icon_url":
+                "https://media.discordapp.net/attachments/1264063932507885638/1264063952447471626/aa27eef2b9f84e48b30d4e4a2db7ca1c.jpg?ex=669c82cb&is=669b314b&hm=010bad4b6d460661dbcaa14a79a7da748401447e27c55bf5e0f7bf6df9237fc9&=&format=webp&width=898&height=1082"
+            },
+            "thumbnail": {
+                "url":
+                "https://media.discordapp.net/attachments/1264063932507885638/1264063952447471626/aa27eef2b9f84e48b30d4e4a2db7ca1c.jpg?ex=669c82cb&is=669b314b&hm=010bad4b6d460661dbcaa14a79a7da748401447e27c55bf5e0f7bf6df9237fc9&=&format=webp&width=898&height=1082"
+            }
+        }]
+    }
+elif {item} == "HIGHTECH SLINGSHOT":  
+    payload = {
+        
+        "content":
+        "<@&BUYER_ROLE_ID>",
+        "embeds": [{
+            "title": f"FOUND A: **HIGHTECH SLINGSHOT**",
+            "description":
+            f"**ITEM: Hightech Slingshot** ROOM: **{room}** TIME: **{current_time}** REGION: **{region}** -#ⓘ This is one of the rarest cosmetics.",
             "color": 0x00FF00,
             "footer": {
                 "text": "Log generated at"
@@ -363,10 +392,110 @@ def Player_Found(item, room, count):
             "thumbnail": {
                 "url":
                 "https://media.discordapp.net/attachments/1264063932507885638/1264063952447471626/aa27eef2b9f84e48b30d4e4a2db7ca1c.jpg?ex=669c82cb&is=669b314b&hm=010bad4b6d460661dbcaa14a79a7da748401447e27c55bf5e0f7bf6df9237fc9&=&format=webp&width=898&height=1082"
-            },
-            "timestamp": f"{current_time}"
+            }
         }]
     }
+elif {item} == "STICK":  
+    ppayload = {
+        
+        "content":
+        f"<@&BUYER_ROLE_ID>",
+        "embeds": [{
+            "title": f"FOUND A: **STICK**",
+            "description":
+            f"**ITEM: Stick** ROOM: **{room}** TIME: **{current_time}** REGION: **{region}** -#ⓘ**NOTE** This person can and will **ban** you for tracking.",
+            "color": 0x00FF00,
+            "footer": {
+                "text": "Log generated at"
+            },
+            "author": {
+                "name":
+                "Player Traker Log",
+                "icon_url":
+                "https://media.discordapp.net/attachments/1264063932507885638/1264063952447471626/aa27eef2b9f84e48b30d4e4a2db7ca1c.jpg?ex=669c82cb&is=669b314b&hm=010bad4b6d460661dbcaa14a79a7da748401447e27c55bf5e0f7bf6df9237fc9&=&format=webp&width=898&height=1082"
+            },
+            "thumbnail": {
+                "url":
+                "https://media.discordapp.net/attachments/1264063932507885638/1264063952447471626/aa27eef2b9f84e48b30d4e4a2db7ca1c.jpg?ex=669c82cb&is=669b314b&hm=010bad4b6d460661dbcaa14a79a7da748401447e27c55bf5e0f7bf6df9237fc9&=&format=webp&width=898&height=1082"
+            }
+        }]
+    }
+elif {item} == "ADMIN BADGE":  
+    payload = {
+        
+        "content":
+        "<@&BUYER_ROLE_ID>",
+        "embeds": [{
+            "title": f"FOUND A: **ADMIN BADGE**",
+            "description":
+            f"**ITEM: Admin Badge** ROOM: **{room}** TIME: **{current_time}** REGION: **{region}** -#ⓘ**NOTE** This person can and will **ban** you for tracking.",
+            "color": 0x00FF00,
+            "footer": {
+                "text": "Log generated at"
+            },
+            "author": {
+                "name":
+                "Player Traker Log",
+                "icon_url":
+                "https://media.discordapp.net/attachments/1264063932507885638/1264063952447471626/aa27eef2b9f84e48b30d4e4a2db7ca1c.jpg?ex=669c82cb&is=669b314b&hm=010bad4b6d460661dbcaa14a79a7da748401447e27c55bf5e0f7bf6df9237fc9&=&format=webp&width=898&height=1082"
+            },
+            "thumbnail": {
+                "url":
+                "https://media.discordapp.net/attachments/1264063932507885638/1264063952447471626/aa27eef2b9f84e48b30d4e4a2db7ca1c.jpg?ex=669c82cb&is=669b314b&hm=010bad4b6d460661dbcaa14a79a7da748401447e27c55bf5e0f7bf6df9237fc9&=&format=webp&width=898&height=1082"
+            }
+        }]
+    }
+elif {item} == "UNRELEASED SWEATER":  
+    ppayload = {
+        
+        "content":
+        "<@&BUYER_ROLE_ID>",
+        "embeds": [{
+            "title": f"FOUND A: **UNRELEASED SWEATER**",
+            "description":
+            f"**ITEM: Unreleased Sweater** ROOM: **{room}** TIME: **{current_time}** REGION: **{region}** -#ⓘ This person is a modder who obtained the unreleased sweater.",
+            "color": 0x00FF00,
+            "footer": {
+                "text": "Log generated at"
+            },
+            "author": {
+                "name":
+                "Player Traker Log",
+                "icon_url":
+                "https://media.discordapp.net/attachments/1264063932507885638/1264063952447471626/aa27eef2b9f84e48b30d4e4a2db7ca1c.jpg?ex=669c82cb&is=669b314b&hm=010bad4b6d460661dbcaa14a79a7da748401447e27c55bf5e0f7bf6df9237fc9&=&format=webp&width=898&height=1082"
+            },
+            "thumbnail": {
+                "url":
+                "https://media.discordapp.net/attachments/1264063932507885638/1264063952447471626/aa27eef2b9f84e48b30d4e4a2db7ca1c.jpg?ex=669c82cb&is=669b314b&hm=010bad4b6d460661dbcaa14a79a7da748401447e27c55bf5e0f7bf6df9237fc9&=&format=webp&width=898&height=1082"
+            }
+        }]
+    }
+elif {item} == "ILLUSTRATOR BADGE":  
+    payload = {
+        
+        "content":
+        "<@&BUYER_ROLE_ID>",
+        "embeds": [{
+            "title": f"FOUND A: **ILLUSTRATOR BADGE**",
+            "description":
+            f"**ITEM: Illustrator Badge** ROOM: **{room}** TIME: **{current_time}** REGION: **{region}** -#ⓘ **NOTE** These players can not ban you but they are in contact with **moderators**.",
+            "color": 0x00FF00,
+            "footer": {
+                "text": "Log generated at"
+            },
+            "author": {
+                "name":
+                "Player Traker Log",
+                "icon_url":
+                "https://media.discordapp.net/attachments/1264063932507885638/1264063952447471626/aa27eef2b9f84e48b30d4e4a2db7ca1c.jpg?ex=669c82cb&is=669b314b&hm=010bad4b6d460661dbcaa14a79a7da748401447e27c55bf5e0f7bf6df9237fc9&=&format=webp&width=898&height=1082"
+            },
+            "thumbnail": {
+                "url":
+                "https://media.discordapp.net/attachments/1264063932507885638/1264063952447471626/aa27eef2b9f84e48b30d4e4a2db7ca1c.jpg?ex=669c82cb&is=669b314b&hm=010bad4b6d460661dbcaa14a79a7da748401447e27c55bf5e0f7bf6df9237fc9&=&format=webp&width=898&height=1082"
+            }
+        }]
+    }
+    
     response = requests.post(Snippet_Main, json=payload)
     if response.status_code != 204:
         print(
@@ -495,10 +624,10 @@ def check_data(session_ticket):
                 Player_Found("ADMIN BADGE", word, count)
             if "data" in response_data and UnreleasedSweater in str(
                     response_data["data"]):
-                Player_Found("UnreleasedSweater", word, count)
+                Player_Found("UNRELEASED SWEATER", word, count)
             if "data" in response_data and IllustratorBadge in str(
                     response_data["data"]):
-                Player_Found("IllustratorBadge", word, count)
+                Player_Found("ILLUSTRATOR BADGE", word, count)
             else:
                 Player_Missed(combined_code, response_data)
                 print(
